@@ -1,0 +1,11 @@
+.{
+  .name = "runit.zig",
+  .version = "2.1.2",
+  .paths = .{"."},
+  .dependencies = .{
+    .runit = .{
+      .url = "http://smarden.org/runit/runit-2.1.2.tar.gz",
+      .hash = "122091abe3a043760a355ad8dd0d17bceade6a5352dbbc671f34f5986b95c8dacf84",
+    },
+  },
+}
