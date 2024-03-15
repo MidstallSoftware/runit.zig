@@ -33,20 +33,21 @@ pub fn build(b: *std.Build) void {
     byte.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
     byte.addCSourceFiles(.{
+        .root = runitSource.path("runit-2.1.2/src"),
         .files = &.{
-            runitSource.path("runit-2.1.2/src/byte_chr.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/byte_copy.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/byte_cr.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/byte_diff.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/byte_rchr.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fmt_uint.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fmt_uint0.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fmt_ulong.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/scan_ulong.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/str_chr.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/str_diff.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/str_len.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/str_start.c").getPath(runitSource.builder),
+            "byte_chr.c",
+            "byte_copy.c",
+            "byte_cr.c",
+            "byte_diff.c",
+            "byte_rchr.c",
+            "fmt_uint.c",
+            "fmt_uint0.c",
+            "fmt_ulong.c",
+            "scan_ulong.c",
+            "str_chr.c",
+            "str_diff.c",
+            "str_len.c",
+            "str_start.c",
         },
     });
 
@@ -64,20 +65,21 @@ pub fn build(b: *std.Build) void {
     time.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
     time.addCSourceFiles(.{
+        .root = runitSource.path("runit-2.1.2/src"),
         .files = &.{
-            runitSource.path("runit-2.1.2/src/iopause.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/tai_now.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/tai_pack.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/tai_sub.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/tai_unpack.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_add.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_approx.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_frac.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_less.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_now.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_pack.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_sub.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/taia_uint.c").getPath(runitSource.builder),
+            "iopause.c",
+            "tai_now.c",
+            "tai_pack.c",
+            "tai_sub.c",
+            "tai_unpack.c",
+            "taia_add.c",
+            "taia_approx.c",
+            "taia_frac.c",
+            "taia_less.c",
+            "taia_now.c",
+            "taia_pack.c",
+            "taia_sub.c",
+            "taia_uint.c",
         },
     });
 
@@ -96,54 +98,60 @@ pub fn build(b: *std.Build) void {
 
     unix.addCSourceFiles(.{
         .files = &.{
-            runitSource.path("runit-2.1.2/src/alloc.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/alloc_re.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_0.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_1.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_2.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_get.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_put.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_read.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/buffer_write.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/coe.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/env.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/error.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/error_str.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fd_copy.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fd_move.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/fifo.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/lock_ex.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/lock_exnb.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/ndelay_off.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/ndelay_on.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/open_append.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/open_read.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/open_trunc.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/open_write.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/openreadclose.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/pathexec_env.c").getPath(runitSource.builder),
-            b.pathFromRoot("src/pathexec_run.c"),
-            b.pathFromRoot("src/prot.c"),
-            runitSource.path("runit-2.1.2/src/readclose.c").getPath(runitSource.builder),
-            b.pathFromRoot("src/seek_set.c"),
-            runitSource.path("runit-2.1.2/src/sgetopt.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/sig.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/sig_block.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/sig_catch.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/sig_pause.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_cat.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_catb.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_cats.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_eady.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_opyb.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_opys.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/stralloc_pend.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/strerr_die.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/strerr_sys.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/subgetopt.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/wait_nohang.c").getPath(runitSource.builder),
-            runitSource.path("runit-2.1.2/src/wait_pid.c").getPath(runitSource.builder),
+            "src/pathexec_run.c",
+            "src/prot.c",
+            "src/seek_set.c",
+        },
+    });
+
+    unix.addCSourceFiles(.{
+        .root = runitSource.path("runit-2.1.2/src"),
+        .files = &.{
+            "alloc.c",
+            "alloc_re.c",
+            "buffer.c",
+            "buffer_0.c",
+            "buffer_1.c",
+            "buffer_2.c",
+            "buffer_get.c",
+            "buffer_put.c",
+            "buffer_read.c",
+            "buffer_write.c",
+            "coe.c",
+            "env.c",
+            "error.c",
+            "error_str.c",
+            "fd_copy.c",
+            "fd_move.c",
+            "fifo.c",
+            "lock_ex.c",
+            "lock_exnb.c",
+            "ndelay_off.c",
+            "ndelay_on.c",
+            "open_append.c",
+            "open_read.c",
+            "open_trunc.c",
+            "open_write.c",
+            "openreadclose.c",
+            "pathexec_env.c",
+            "readclose.c",
+            "sgetopt.c",
+            "sig.c",
+            "sig_block.c",
+            "sig_catch.c",
+            "sig_pause.c",
+            "stralloc_cat.c",
+            "stralloc_catb.c",
+            "stralloc_cats.c",
+            "stralloc_eady.c",
+            "stralloc_opyb.c",
+            "stralloc_opys.c",
+            "stralloc_pend.c",
+            "strerr_die.c",
+            "strerr_sys.c",
+            "subgetopt.c",
+            "wait_nohang.c",
+            "wait_pid.c",
         },
     });
 
@@ -164,10 +172,8 @@ pub fn build(b: *std.Build) void {
 
     runsv.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runsv.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runsv.c").getPath(runitSource.builder),
-        },
+    runsv.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runsv.c"),
     });
 
     b.installArtifact(runsv);
@@ -189,10 +195,8 @@ pub fn build(b: *std.Build) void {
 
     runsvdir.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runsvdir.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runsvdir.c").getPath(runitSource.builder),
-        },
+    runsvdir.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runsvdir.c"),
     });
 
     b.installArtifact(runsvdir);
@@ -214,10 +218,8 @@ pub fn build(b: *std.Build) void {
 
     runsvstat.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runsvstat.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runsvstat.c").getPath(runitSource.builder),
-        },
+    runsvstat.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runsvstat.c"),
     });
 
     b.installArtifact(runsvstat);
@@ -238,10 +240,8 @@ pub fn build(b: *std.Build) void {
 
     runsvctrl.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runsvctrl.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runsvctrl.c").getPath(runitSource.builder),
-        },
+    runsvctrl.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runsvctrl.c"),
     });
 
     b.installArtifact(runsvctrl);
@@ -263,10 +263,8 @@ pub fn build(b: *std.Build) void {
 
     sv.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    sv.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/sv.c").getPath(runitSource.builder),
-        },
+    sv.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/sv.c"),
     });
 
     b.installArtifact(sv);
@@ -287,10 +285,8 @@ pub fn build(b: *std.Build) void {
 
     runit.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runit.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runit.c").getPath(runitSource.builder),
-        },
+    runit.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runit.c"),
     });
 
     b.getInstallStep().dependOn(&b.addInstallArtifact(runit, .{
@@ -317,10 +313,8 @@ pub fn build(b: *std.Build) void {
 
     runitInit.addIncludePath(runitSource.path("runit-2.1.2/src"));
 
-    runitInit.addCSourceFiles(.{
-        .files = &.{
-            runitSource.path("runit-2.1.2/src/runit-init.c").getPath(runitSource.builder),
-        },
+    runitInit.addCSourceFile(.{
+        .file = runitSource.path("runit-2.1.2/src/runit-init.c"),
     });
 
     b.getInstallStep().dependOn(&b.addInstallArtifact(runitInit, .{
